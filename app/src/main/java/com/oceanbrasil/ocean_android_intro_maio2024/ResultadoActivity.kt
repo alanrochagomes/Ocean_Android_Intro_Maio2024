@@ -1,6 +1,7 @@
 package com.oceanbrasil.ocean_android_intro_maio2024
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,10 @@ class ResultadoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val nomeDigitado = intent.getStringExtra("NOME_DIGITADO")
+
+        val tvNome = findViewById<TextView>(R.id.tvNome)
+        tvNome.text = nomeDigitado
     }
 }
