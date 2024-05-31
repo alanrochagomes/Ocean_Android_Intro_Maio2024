@@ -25,7 +25,14 @@ class MainActivity : AppCompatActivity() {
         btEnviar.setOnClickListener {
             // Dentro desse bloco { }, o código só
             // será executado quando o botão for clicado
-            tvResultado.text = etNome.text
+            val nome = etNome.text
+
+            if (nome.isBlank()) {
+                // Exibimos a mensagem de erro
+                etNome.error = "Digite o seu nome"
+            } else {
+                tvResultado.text = nome
+            }
         }
     }
 }
