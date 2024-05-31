@@ -1,10 +1,11 @@
 package com.oceanbrasil.ocean_android_intro_maio2024
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,14 @@ class MainActivity : AppCompatActivity() {
             } else {
                 tvResultado.text = nome
             }
+        }
+
+        // Abrir Nova Tela
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+        btAbrirNovaTela.setOnClickListener {
+            val resultadoActivityIntent = Intent(this, ResultadoActivity::class.java)
+
+            startActivity(resultadoActivityIntent)
         }
     }
 }
